@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ecosistema Comercial — Hoja de Ruta</title>
+<meta name="description" content="Checklist diario/semanal/mensual de la hoja de ruta del Ecosistema Comercial Completo.">
+<meta name="theme-color" content="#1f3864">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header-inner">
+      <div class="brand">
+        <span class="brand-mark">EC</span>
+        <span class="brand-text">Ecosistema Comercial<br><small>Hoja de ruta</small></span>
+      </div>
+      <button id="navSettings" class="icon-btn" title="Ajustes" aria-label="Ajustes">⚙️</button>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+      <div id="progressLabel" class="progress-label">0 / 0 tareas completadas (0%)</div>
+    </div>
+    <div id="syncBadge" class="sync-badge off">Sin sincronizar</div>
+  </header>
+
+  <main id="appBody" class="app-body"></main>
+
+  <nav class="bottom-nav">
+    <button id="navHoy" class="nav-btn active">📅 Hoy</button>
+    <button id="navTodo" class="nav-btn">📋 Toda la hoja de ruta</button>
+  </nav>
+
+  <div id="settingsModal" class="modal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Ajustes</h3>
+        <button id="settingsClose" class="icon-btn" aria-label="Cerrar">✕</button>
+      </div>
+      <label class="field-label">Fecha de inicio (Día 1)</label>
+      <input type="date" id="settingStartDate">
+
+      <label class="field-label">Plaza / ciudad para las búsquedas</label>
+      <input type="text" id="settingCity" placeholder="Ej. Ciudad de México, Monterrey, Guadalajara...">
+
+      <label class="field-label">URL de Google Apps Script (sincronizar con Sheets)</label>
+      <input type="text" id="settingSheetsUrl" placeholder="https://script.google.com/macros/s/.../exec">
+      <p class="field-hint">Ver <code>apps-script/Code.gs</code> y <code>README.md</code> en el repositorio para instrucciones de configuración paso a paso.</p>
+
+      <button id="settingsSave" class="btn-primary">Guardar</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
